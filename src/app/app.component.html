@@ -1,0 +1,25 @@
+<h2>Select a continent and country:</h2>
+
+<select [formControl]="continentSelect">
+  <option>Antarctica</option>
+  <option>Africa</option>
+  <option>Asia</option>
+  <option>Europe</option>
+  <option>North America</option>
+  <option>South America</option>
+  <option>Oceania</option>
+</select>
+
+<br />
+<br />
+
+<select [formControl]="countrySelect">
+  <option *ngFor="let option of countries">
+    {{ option.country }}
+  </option>
+</select>
+
+<p>
+  You selected: {{ continent$ | async }} -
+  {{ countrySelect.valueChanges | async }}
+</p>
